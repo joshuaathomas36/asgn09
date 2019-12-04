@@ -1,77 +1,22 @@
 <?php
-
-function convert_to_Imperialgallons($value, $from_unit) {
-  switch($from_unit) {
-    case 'Bucket':
-      return $value * 4;
-      break;
-    case 'Butt':
-      return $value * 108;
-      break;
-    case 'Firkin':
-      return $value * 9;
-      break;
-    case 'Hogshead':
-      return $value * 54;
-      break;
-    case 'Imperialgallons':
-      return $value * 1;
-      break;
-    case 'Pint':
-      return $value * 0.125;
-      break;
-    default:
-      return "Unsupported unit.";
-  }
-}
-  
-function convert_from_Imperialgallons($value, $to_unit) {
-  switch($to_unit) {
-    case 'Bucket':
-      return $value / 4;
-      break;
-    case 'Butt':
-      return $value / 108;
-      break;
-    case 'Firkin':
-      return $value / 9;
-      break;
-    case 'Hogshead':
-      return $value / 54;
-      break;
-    case 'Imperialgallons':
-      return $value / 1;
-      break;
-    case 'Pint':
-      return $value / 0.125;
-      break;
-    default:
-      return "Unsupported unit.";
-  }
-}
-
-function convert_Imperialgallons($value, $from_unit, $to_unit) {
-  $liquid_value = convert_to_Imperialgallons($value, $from_unit);
-  $new_value = convert_from_Imperialgallons($liquid_value, $to_unit);
-  return $new_value;
-}
+include("includes/functions.php");
 
 $from_value = '';
-$from_unit = '';
-$to_unit = '';
-$to_value = '';
+  $from_unit = '';
+  $to_unit = '';
+  $to_value = '';
 
-if(!isset($_POST['submit'])) {
-  $_POST['submit'] = '';
-}
+  if(!isset($_POST['submit'])) {
+    $_POST['submit'] = '';
+  }
 
-if($_POST['submit']) {
-  $from_value = $_POST['from_value'];
-  $from_unit = $_POST['from_unit'];
-  $to_unit = $_POST['to_unit'];
-  
-  $to_value = convert_Imperialgallons($from_value, $from_unit, $to_unit);
-}
+  if($_POST['submit']) {
+    $from_value = $_POST['from_value'];
+    $from_unit = $_POST['from_unit'];
+    $to_unit = $_POST['to_unit'];
+
+    $to_value = convert_Imperialgallons($from_value, $from_unit, $to_unit);
+  }
 
 ?>
 <!DOCTYPE html>

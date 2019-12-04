@@ -13,7 +13,7 @@
   
       <ul id="measurement-types">
         <li><a href="liquid.php">Liquids</a></li>
-        <li><a href="outdated-irish-length-measurements.php">Liquids</a></li>
+        <li><a href="outdated-irish-length-measurements.php">Outdated Irish Lengths</a></li>
       </ul>
       <a href="../index.php">WEB 182 Home</a>
     </div>
